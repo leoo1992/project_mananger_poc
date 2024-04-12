@@ -15,22 +15,26 @@ export default function LeftMenu() {
 
   return (
     <div className="navbar-start p-0 m-0">
-      <div className="drawer">
-        <input id="my-drawer" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content">
+      <div className="drawer p-0 m-0">
+        <input
+          id="my-drawer"
+          type="checkbox"
+          className="drawer-toggle m-0 p-0"
+        />
+        <div className="drawer-content p-0 m-0">
           <button
             onClick={() => setActive(!active)}
             className="transition-all duration-1000 ease-in-out"
           >
             <label
               htmlFor="my-drawer"
-              className={`btn p-0 m-0 -top-3 drawer-button z-50 absolute 
+              className={`btn p-0 m-0 -top-1 drawer-button z-50 absolute 
               text-neutral-content btn-circle 
               transition-all duration-500 ease-in-out
               ${
                 active
-                  ? 'text-xl sm:text-3xl btn-ghost'
-                  : 'btn-error btn-xs left-36 ml-2 shadow-error font-extrabold'
+                  ? 'btn-sm text-lg sm:text-3xl btn-ghost'
+                  : 'btn-error btn-xs left-36 shadow-error font-extrabold'
               }`}
             >
               {active ? <HiMenu /> : <HiX />}

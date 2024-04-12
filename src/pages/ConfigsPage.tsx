@@ -1,7 +1,7 @@
 export default function ConfigsPage() {
   return (
-    <div className="flex-grow flex justify-center items-start m-0 pt-5">
-      Configs
-    </div>
+    <>
+      <div className="mt-4 p-0 flex">Configs</div>
+    </>
   );
 }

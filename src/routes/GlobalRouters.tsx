@@ -13,51 +13,25 @@ import {
 } from '../pages';
 // import PrivateRoute from './PrivateRoute';
 
-const GlobalRouters = () => {
+export default function GlobalRouters() {
   // <PrivateRoute>
   // </PrivateRoute>
   return (
-    <>
-      <BrowserRouter>
-        <Navbar />
+    <BrowserRouter>
+      <Navbar />
+      <main className="flex flex-grow justify-center items-start m-0 py-16 h-full">
         <Routes>
-          <Route path="/" element={StartPage()} errorElement={ErrorPage()} />
-          <Route
-            path="/projects"
-            element={ProjectsPage()}
-            errorElement={ErrorPage()}
-          />
-          <Route
-            path="/company"
-            element={<CompanyPage />}
-            errorElement={ErrorPage()}
-          />
-          <Route
-            path="/contacts"
-            element={ContactsPage()}
-            errorElement={ErrorPage()}
-          />
-          <Route
-            path="/profile"
-            element={ProfilePage()}
-            errorElement={ErrorPage()}
-          />
-          <Route
-            path="/configs"
-            element={ConfigsPage()}
-            errorElement={ErrorPage()}
-          />
-          <Route
-            path="/logout"
-            element={LogoutPage()}
-            errorElement={ErrorPage()}
-          />
-          <Route path="*" element={ErrorPage()} errorElement={ErrorPage()} />
+          <Route path="/" element={<StartPage />} />
+          <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/company" element={<CompanyPage />} />
+          <Route path="/contacts" element={<ContactsPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/configs" element={<ConfigsPage />} />
+          <Route path="/logout" element={<LogoutPage />} />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
-        <Footer />
-      </BrowserRouter>
-    </>
+      </main>
+      <Footer />
+    </BrowserRouter>
   );
-};
-
-export default GlobalRouters;
+}

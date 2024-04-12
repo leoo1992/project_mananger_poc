@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom/client';
-import App from './App';
 import '../styles/@Globals/index.css';
+import GlobalRouters from '../routes/GlobalRouters';
 
 // window.console.warn = () => {};
 // window.console.info = () => {};
@@ -8,4 +8,4 @@ import '../styles/@Globals/index.css';
 // window.console.log = () => {};
 // window.console.clear();
 
-ReactDOM.createRoot(document.getElementById('root')!).render(<App />);
+ReactDOM.createRoot(document.getElementById('root')!).render(<GlobalRouters />);
