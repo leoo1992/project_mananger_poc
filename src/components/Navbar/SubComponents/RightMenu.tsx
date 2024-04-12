@@ -1,7 +1,9 @@
 import { HiX, HiUser, HiCog, HiLogout } from 'react-icons/hi';
 import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 export default function RightMenu() {
+  const location = useLocation();
   const [active2, setActive2] = useState(true);
 
   return (
@@ -36,28 +38,58 @@ export default function RightMenu() {
           ></label>
           <ul className="menu pt-16 h-svh bg-neutral text-neutral-content shadow-sm shadow-primary w-48">
             <li>
-              <a className="rounded-badge font-bold text-base">
-                <div className="text-2xl">
-                  <HiUser />
-                </div>
+              <Link
+                to="/profile"
+                className={`text-lg font-bold focus:text-warning 
+                 selection:text-warning visited:text-base ${
+                   location.pathname === '/profile'
+                     ? 'text-warning'
+                     : 'text-neutral-content hover:text-white'
+                 }`}
+              >
+                <span className="rounded-badge font-bold text-base">
+                  <span className="text-2xl">
+                    <HiUser />
+                  </span>
+                </span>
                 Profile
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="rounded-badge font-bold text-base">
-                <div className="text-2xl">
-                  <HiCog />
-                </div>
+              <Link
+                to="/configs"
+                className={`text-lg font-bold focus:text-warning 
+                 selection:text-warning visited:text-base ${
+                   location.pathname === '/configs'
+                     ? 'text-warning'
+                     : 'text-neutral-content hover:text-white'
+                 }`}
+              >
+                <span className="rounded-badge font-bold text-base">
+                  <span className="text-2xl">
+                    <HiCog />
+                  </span>
+                </span>
                 Configs
-              </a>
+              </Link>
             </li>
             <li>
-              <button className="rounded-badge font-bold text-base">
-                <div className="text-2xl">
-                  <HiLogout />
-                </div>
+              <Link
+                to="/logout"
+                className={`text-lg font-bold focus:text-warning 
+                 selection:text-warning visited:text-base ${
+                   location.pathname === '/logout'
+                     ? 'text-warning'
+                     : 'text-neutral-content hover:text-white'
+                 }`}
+              >
+                <span className="rounded-badge font-bold text-base">
+                  <span className="text-2xl">
+                    <HiLogout />
+                  </span>
+                </span>
                 Logout
-              </button>
+              </Link>
             </li>
           </ul>
         </div>

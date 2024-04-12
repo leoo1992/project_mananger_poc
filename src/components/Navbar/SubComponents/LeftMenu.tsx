@@ -1,8 +1,11 @@
-import { HiPhone } from 'react-icons/hi';
-import { HiOfficeBuilding } from 'react-icons/hi';
-import { HiMap } from 'react-icons/hi';
-import { HiHome } from 'react-icons/hi';
-import { HiX, HiMenu } from 'react-icons/hi';
+import {
+  HiPhone,
+  HiOfficeBuilding,
+  HiMap,
+  HiHome,
+  HiX,
+  HiMenu,
+} from 'react-icons/hi';
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
