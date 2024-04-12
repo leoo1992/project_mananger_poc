@@ -11,10 +11,11 @@ export default function Navbar() {
           <LeftMenu />
         </div>
         <div className="navbar-center font-bold p-0 m-0 text-warning">
-          <div className="hidden sm:text-3xl mr-1 sm:mr-2">
+          <div className="hidden sm:text-3xl mr-1 sm:mr-2 min-[300px]:block">
             <BsCoin />
           </div>
-          Costs Manager
+          <span className="p-1">Costs </span>
+          <span className="hidden min-[290px]:block"> Manager </span>
         </div>
         <div className="navbar-end m-0 p-0 text-neutral-content">
           <ThemeToogle />

@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import {
-  StartPage,
+  HomePage,
   ProjectsPage,
   ErrorPage,
   CompanyPage,
@@ -11,6 +11,7 @@ import {
   LogoutPage,
   ProfilePage,
 } from '../pages';
+import Container from '../components/layout/Container';
 // import PrivateRoute from './PrivateRoute';
 
 export default function GlobalRouters() {
@@ -19,9 +20,9 @@ export default function GlobalRouters() {
   return (
     <BrowserRouter>
       <Navbar />
-      <main className="flex flex-grow justify-center items-start m-0 py-16 h-full">
+      <Container customClass="h-full">
         <Routes>
-          <Route path="/" element={<StartPage />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/company" element={<CompanyPage />} />
           <Route path="/contacts" element={<ContactsPage />} />
@@ -30,7 +31,7 @@ export default function GlobalRouters() {
           <Route path="/logout" element={<LogoutPage />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
-      </main>
+      </Container>
       <Footer />
     </BrowserRouter>
   );

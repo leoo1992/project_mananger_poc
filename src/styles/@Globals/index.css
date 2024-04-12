@@ -2,14 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  width: 100vw;
-  height: 100vh;
-  overflow-y: auto;
-  overflow-x: hidden;
-  scrollbar-gutter: auto !important;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
+#root,
+html,
 body {
   margin: 0;
   padding: 0;
@@ -17,21 +17,8 @@ body {
   height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: 'Tilt Neon', sans-serif;
+  scrollbar-gutter: auto !important;
   overflow-y: auto;
   overflow-x: hidden;
-  scrollbar-gutter: auto !important;
-}
-
-* {
-  scrollbar-gutter: auto !important;
-}
-
-#root {
-  margin: 0;
-  padding: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow-y: auto;
-  overflow-x: hidden;
-  scrollbar-gutter: auto !important;
 }

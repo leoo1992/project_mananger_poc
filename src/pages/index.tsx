@@ -1,4 +1,4 @@
-import StartPage from './StartPage';
+import HomePage from './HomePage';
 import ProjectsPage from './ProjectsPage';
 import ErrorPage from './ErrorPage';
 import CompanyPage from './CompanyPage';
@@ -8,7 +8,7 @@ import LogoutPage from './LogoutPage';
 import ProfilePage from './ProfilePage';
 
 export {
-  StartPage,
+  HomePage,
   ProjectsPage,
   ErrorPage,
   CompanyPage,

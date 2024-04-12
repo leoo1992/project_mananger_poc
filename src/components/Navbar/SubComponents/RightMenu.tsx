@@ -14,8 +14,8 @@ export default function RightMenu() {
           <button onClick={() => setActive2(!active2)} className="text-xl">
             <label
               htmlFor="my-drawer-4"
-              className={`btn p-0 m-0 -top-3 right-0 pl-4 drawer-button z-50 absolute 
-              text-neutral-content btn-circle 
+              className={`btn btn-sm p-0 m-0 -top-1 right-0 drawer-button z-50 absolute 
+              text-neutral-content btn-circle text-center
               transition-all duration-500 ease-in-out
               ${
                 active2
