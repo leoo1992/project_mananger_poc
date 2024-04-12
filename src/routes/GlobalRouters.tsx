@@ -1,39 +1,61 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import StartPage from '../pages/StartPage';
-import HomePage from '../pages/HomePage';
-import ErrorPage from '../pages/ErrorPage';
-import PrivateRoute from './PrivateRoute';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import {
+  StartPage,
+  ProjectsPage,
+  ErrorPage,
+  CompanyPage,
+  ContactsPage,
+  ConfigsPage,
+  LogoutPage,
+  ProfilePage,
+} from '../pages';
+// import PrivateRoute from './PrivateRoute';
 
 const GlobalRouters = () => {
+  // <PrivateRoute>
+  // </PrivateRoute>
   return (
     <>
-      <Navbar />
       <BrowserRouter>
+        <Navbar />
         <Routes>
+          <Route path="/" element={StartPage()} errorElement={ErrorPage()} />
           <Route
-            path="/"
-            element={<StartPage />}
-            errorElement={<ErrorPage />}
+            path="/projects"
+            element={ProjectsPage()}
+            errorElement={ErrorPage()}
           />
           <Route
-            path="/home"
-            errorElement={<ErrorPage />}
-            element={
-              <PrivateRoute>
-                <HomePage />
-              </PrivateRoute>
-            }
+            path="/company"
+            element={<CompanyPage />}
+            errorElement={ErrorPage()}
           />
           <Route
-            path="*"
-            element={<ErrorPage />}
-            errorElement={<ErrorPage />}
+            path="/contacts"
+            element={ContactsPage()}
+            errorElement={ErrorPage()}
           />
+          <Route
+            path="/profile"
+            element={ProfilePage()}
+            errorElement={ErrorPage()}
+          />
+          <Route
+            path="/configs"
+            element={ConfigsPage()}
+            errorElement={ErrorPage()}
+          />
+          <Route
+            path="/logout"
+            element={LogoutPage()}
+            errorElement={ErrorPage()}
+          />
+          <Route path="*" element={ErrorPage()} errorElement={ErrorPage()} />
         </Routes>
+        <Footer />
       </BrowserRouter>
-      <Footer />
     </>
   );
 };

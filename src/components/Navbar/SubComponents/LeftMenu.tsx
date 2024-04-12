@@ -4,9 +4,12 @@ import { HiMap } from 'react-icons/hi';
 import { HiHome } from 'react-icons/hi';
 import { HiX, HiMenu } from 'react-icons/hi';
 import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 export default function LeftMenu() {
+  const location = useLocation();
   const [active, setActive] = useState(true);
+
   return (
     <div className="navbar-start p-0 m-0">
       <div className="drawer">
@@ -42,28 +45,66 @@ export default function LeftMenu() {
           ></label>
           <ul className="menu pt-16 h-svh bg-neutral text-neutral-content shadow-sm shadow-primary w-48">
             <li>
-              <div className="text-2xl">
+              <Link
+                to="/"
+                className={`text-2xl focus:text-warning 
+                 selection:text-warning visited:text-base ${
+                   location.pathname === '/'
+                     ? 'text-warning'
+                     : 'text-neutral-content hover:text-white'
+                 }`}
+              >
                 <HiHome />
-                <a className="rounded-badge font-bold text-base">Home</a>
-              </div>
+                <span className="rounded-badge font-bold text-base">Home</span>
+              </Link>
             </li>
             <li>
-              <div className="text-2xl">
+              <Link
+                to="/projects"
+                className={`text-2xl focus:text-warning 
+                 selection:text-warning visited:text-base ${
+                   location.pathname === '/projects'
+                     ? 'text-warning'
+                     : 'text-neutral-content hover:text-white'
+                 }`}
+              >
                 <HiMap />
-                <a className="rounded-badge font-bold text-base">Projects</a>
-              </div>
+                <span className="rounded-badge font-bold text-base">
+                  Projects
+                </span>
+              </Link>
             </li>
             <li>
-              <div className="text-2xl">
+              <Link
+                to="/company"
+                className={`text-2xl focus:text-warning 
+                 selection:text-warning visited:text-base ${
+                   location.pathname === '/company'
+                     ? 'text-warning'
+                     : 'text-neutral-content hover:text-white'
+                 }`}
+              >
                 <HiOfficeBuilding />
-                <a className="rounded-badge font-bold text-base">Company</a>
-              </div>
+                <span className="rounded-badge font-bold text-base">
+                  Company
+                </span>
+              </Link>
             </li>
             <li>
-              <div className="text-2xl">
+              <Link
+                to="/contacts"
+                className={`text-2xl focus:text-warning 
+                 selection:text-warning visited:text-base ${
+                   location.pathname === '/contacts'
+                     ? 'text-warning'
+                     : 'text-neutral-content hover:text-white'
+                 }`}
+              >
                 <HiPhone />
-                <a className="rounded-badge font-bold text-base">Contact</a>
-              </div>
+                <span className="rounded-badge font-bold text-base">
+                  Contact
+                </span>
+              </Link>
             </li>
           </ul>
         </div>
