@@ -13,6 +13,20 @@ export default function LeftMenu() {
   const location = useLocation();
   const [active, setActive] = useState(true);
 
+  const toogleMenu = () => {
+    setActive(!active);
+  };
+
+  function handleItemClick() {
+    const drawerCheckbox = document.getElementById(
+      'my-drawer'
+    ) as HTMLInputElement;
+    if (drawerCheckbox) {
+      drawerCheckbox.checked = !drawerCheckbox.checked;
+    }
+    toogleMenu();
+  }
+
   return (
     <div className="navbar-start p-0 m-0">
       <div className="drawer p-0 m-0">
@@ -23,7 +37,7 @@ export default function LeftMenu() {
         />
         <div className="drawer-content p-0 m-0">
           <button
-            onClick={() => setActive(!active)}
+            onClick={toogleMenu}
             className="transition-all duration-1000 ease-in-out"
           >
             <label
@@ -48,10 +62,10 @@ export default function LeftMenu() {
             className="drawer-overlay h-svh w-svw flex justify-between
                         self-center align-middle items-center content-center
                         transition-all duration-1000 ease-in-out"
-            onClick={() => setActive(!active)}
+            onClick={toogleMenu}
           ></label>
           <ul className="menu pt-16 h-svh bg-neutral text-neutral-content shadow-sm shadow-primary w-48">
-            <li>
+            <li onClick={handleItemClick}>
               <Link
                 to="/"
                 className={`text-2xl focus:text-warning 
@@ -65,7 +79,7 @@ export default function LeftMenu() {
                 <span className="rounded-badge font-bold text-base">Home</span>
               </Link>
             </li>
-            <li>
+            <li onClick={handleItemClick}>
               <Link
                 to="/projects"
                 className={`text-2xl focus:text-warning 
@@ -81,7 +95,7 @@ export default function LeftMenu() {
                 </span>
               </Link>
             </li>
-            <li>
+            <li onClick={handleItemClick}>
               <Link
                 to="/company"
                 className={`text-2xl focus:text-warning 
@@ -97,7 +111,7 @@ export default function LeftMenu() {
                 </span>
               </Link>
             </li>
-            <li>
+            <li onClick={handleItemClick}>
               <Link
                 to="/contacts"
                 className={`text-2xl focus:text-warning 

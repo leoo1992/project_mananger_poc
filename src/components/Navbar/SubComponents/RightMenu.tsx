@@ -6,12 +6,26 @@ export default function RightMenu() {
   const location = useLocation();
   const [active2, setActive2] = useState(true);
 
+  const toogleMenu2 = () => {
+    setActive2(!active2);
+  };
+
+  function handleItemClick2() {
+    const drawerCheckbox = document.getElementById(
+      'my-drawer-4'
+    ) as HTMLInputElement;
+    if (drawerCheckbox) {
+      drawerCheckbox.checked = !drawerCheckbox.checked;
+    }
+    toogleMenu2();
+  }
+
   return (
     <div className="">
       <div className="drawer drawer-end">
         <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content">
-          <button onClick={() => setActive2(!active2)} className="text-xl">
+          <button onClick={toogleMenu2} className="text-xl">
             <label
               htmlFor="my-drawer-4"
               className={`btn btn-sm p-0 m-0 -top-1 right-0 drawer-button z-50 absolute 
@@ -34,10 +48,10 @@ export default function RightMenu() {
             className="drawer-overlay h-svh w-svw flex justify-between
                         self-center align-middle items-center content-center
                         transition-all duration-1000 ease-in-out"
-            onClick={() => setActive2(!active2)}
+            onClick={toogleMenu2}
           ></label>
           <ul className="menu pt-16 h-svh bg-neutral text-neutral-content shadow-sm shadow-primary w-48">
-            <li>
+            <li onClick={handleItemClick2}>
               <Link
                 to="/profile"
                 className={`text-lg font-bold focus:text-warning 
@@ -55,7 +69,7 @@ export default function RightMenu() {
                 Profile
               </Link>
             </li>
-            <li>
+            <li onClick={handleItemClick2}>
               <Link
                 to="/configs"
                 className={`text-lg font-bold focus:text-warning 
@@ -73,7 +87,7 @@ export default function RightMenu() {
                 Configs
               </Link>
             </li>
-            <li>
+            <li onClick={handleItemClick2}>
               <Link
                 to="/logout"
                 className={`text-lg font-bold focus:text-warning 
