@@ -11,7 +11,7 @@ export default function ProjectForm() {
       className="form w-full max-w-xs 
    bg-base-200 mx-auto rounded-3xl border-warning border-dotted border-2
     flex-col
-   flex justify-center text-base-content font-bold p-3 mt-5"
+   flex justify-center text-base-content font-bold p-3 mt-3"
     >
       <div className="flex flex-col w-full max-w-xs p-4 gap-y-3.5">
         <label htmlFor="nome" className="label max-w-xs">
@@ -39,15 +39,19 @@ export default function ProjectForm() {
           name="category_id"
           id="category_id"
           className="select select-warning text-base-content border-dotted"
+          defaultValue={0}
         >
           <option
             disabled
-            selected
-            className="p-3 rounded-3xl max-w-xs border-dotted"
+            value={0}
+            className="p-3 rounded-3xl max-w-xs border-dotted text-base-content"
           >
-            Selecione uma categoria
+            Selecione
           </option>
-          <option value={1} className="p-3 rounded-3xl max-w-xs">
+          <option
+            value={1}
+            className="p-3 rounded-3xl max-w-xs text-base-content"
+          >
             cat 1
           </option>
         </select>
