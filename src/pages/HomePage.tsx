@@ -4,8 +4,8 @@ import LinkButton from '../components/layout/LinkButton';
 export default function HomePage() {
   return (
     <section
-      className="flex flex-col flex-grow w-full h-full
-     self-center items-center justify-center content-center text-center py-10 sm:py-16"
+      className="flex flex-col w-full h-full
+      items-center justify-center text-center"
     >
       <h1 className="text-xl sm:text-2xl">
         Bem-vindo ao
