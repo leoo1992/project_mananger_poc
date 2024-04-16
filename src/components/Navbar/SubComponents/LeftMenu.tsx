@@ -48,14 +48,14 @@ export default function LeftMenu() {
               ${
                 active
                   ? 'btn-sm text-lg sm:text-3xl btn-ghost'
-                  : 'btn-error btn-xs left-36 shadow-error font-extrabold'
+                  : 'btn-error btn-xs left-2 shadow-error font-extrabold'
               }`}
             >
               {active ? <HiMenu /> : <HiX />}
             </label>
           </button>
         </div>
-        <div className="drawer-side h-svh w-svw">
+        <div className="drawer-side h-svh w-svw z-50">
           <label
             htmlFor="my-drawer"
             aria-label="close sidebar"
