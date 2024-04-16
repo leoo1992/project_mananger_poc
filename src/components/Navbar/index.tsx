@@ -7,13 +7,19 @@ import { Link } from 'react-router-dom';
 export default function Navbar() {
   return (
     <header className="p-0 m-0">
-      <nav className="navbar bg-neutral shadow-lg top-0 w-screen py-0 my-0 absolute">
+      <nav
+        className="navbar bg-neutral shadow-lg top-0 w-screen 
+      py-0 my-0 absolute"
+      >
         <div className="navbar-start p-0 m-0">
           <LeftMenu />
         </div>
         <div className="navbar-center font-bold p-0 m-0 text-warning ">
           <Link to="/" className="p-0 m-0 flex">
-            <div className="hidden p-1 m-0 sm:text-3xl mr-1 sm:mr-2 min-[300px]:block">
+            <div
+              className="hidden p-1 m-0 sm:text-3xl mr-1 sm:mr-2 
+            min-[300px]:block"
+            >
               <BsCoin />
             </div>
             <span className="p-1 m-0">Costs </span>

@@ -50,7 +50,10 @@ export default function RightMenu() {
                         transition-all duration-1000 ease-in-out"
             onClick={toogleMenu2}
           ></label>
-          <ul className="menu pt-16 h-svh bg-neutral text-neutral-content shadow-sm shadow-primary w-48">
+          <ul
+            className="menu pt-16 h-svh bg-neutral text-neutral-content 
+          shadow-sm shadow-primary w-48"
+          >
             <li onClick={handleItemClick2}>
               <Link
                 to="/profile"
