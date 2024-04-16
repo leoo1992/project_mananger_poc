@@ -1,3 +1,5 @@
+import { RefObject } from 'react';
+
 type PropTypes = {
   nameID: string;
   options: { id: number; name: string }[];
@@ -6,6 +8,8 @@ type PropTypes = {
   classNameLabel?: string;
   classNameSelect?: string;
   classNameOption?: string;
+  selectRef: RefObject<HTMLSelectElement>;
+  required?: boolean;
 };
 
 export default function Select({
@@ -16,6 +20,8 @@ export default function Select({
   classNameLabel = '',
   classNameSelect = '',
   classNameOption = '',
+  selectRef,
+  required = true,
 }: PropTypes) {
   return (
     <>
@@ -23,11 +29,13 @@ export default function Select({
         {labelName}
       </label>
       <select
+        ref={selectRef}
         name={nameID}
         id={nameID}
         className={`select select-warning text-base-content 
       border-dotted ${classNameSelect}`}
         defaultValue={0}
+        required={required}
       >
         <option
           disabled

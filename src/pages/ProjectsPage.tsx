@@ -10,7 +10,7 @@ export default function ProjectsPage() {
       <p className="pt-1 text-sm sm:text-xl mb-2">
         Crie seu projeto para adicionar serviços
       </p>
-      <ProjectForm />
+      <ProjectForm btnText="Cadastrar" />
     </section>
   );
 }
