@@ -21,8 +21,10 @@ type Props = {
 export default function Container(props: Props) {
   return (
     <main
-      className={`flex flex-grow content-between
-    items-start px-8 pt-20 pb-20 w-full flex-wrap ${props.customClass}`}
+      className={`flex
+    items-start min-h-screen min-w-screen flex-wrap py-20 px-4 ${
+      props.customClass ? props.customClass : ''
+    }`}
     >
       {props.children}
     </main>
