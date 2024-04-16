@@ -20,7 +20,7 @@ export default function GlobalRouters() {
   return (
     <BrowserRouter>
       <Navbar />
-      <Container customClass="h-full">
+      <Container>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/projects" element={<ProjectsPage />} />
