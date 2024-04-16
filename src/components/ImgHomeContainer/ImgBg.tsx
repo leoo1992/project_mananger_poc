@@ -53,8 +53,9 @@ export default function ImgBg() {
           alt="Project"
           loader={<div>Carregando...</div>}
           unloader={<div>Erro ao carregar a imagem</div>}
-          className="mt-5 sm:h-5/6 flex content-between justify-between align-middle self-center items-center 
-       bg-cover bg-center bg-fixed bg-clip-border bg-origin-border bg-no-repeat"
+          className="mt-5 sm:h-5/6 flex content-between justify-between 
+          align-middle self-center items-center bg-cover bg-center bg-fixed
+          bg-clip-border bg-origin-border bg-no-repeat"
         />
       )}
     </>
