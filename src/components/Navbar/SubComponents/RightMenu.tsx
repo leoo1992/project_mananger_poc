@@ -28,20 +28,20 @@ export default function RightMenu() {
           <button onClick={toogleMenu2} className="text-xl">
             <label
               htmlFor="my-drawer-4"
-              className={`btn btn-sm p-0 m-0 -top-1 right-0 drawer-button z-50 absolute 
+              className={`btn p-0 m-0 -top-1 right-0 drawer-button z-50 absolute 
               text-neutral-content btn-circle text-center
               transition-all duration-500 ease-in-out
               ${
                 active2
-                  ? 'text-xl sm:text-3xl btn-ghost'
-                  : 'btn-error btn-xs shadow-error font-extrabold'
+                  ? 'text-xl sm:text-3xl btn-ghost btn-sm'
+                  : 'btn-error btn-xs shadow-error right-2 font-extrabold'
               }`}
             >
               {active2 ? <HiUser /> : <HiX />}
             </label>
           </button>
         </div>
-        <div className="drawer-side h-svh w-svw">
+        <div className="drawer-side h-svh w-svw z-50">
           <label
             htmlFor="my-drawer-4"
             aria-label="close sidebar"
