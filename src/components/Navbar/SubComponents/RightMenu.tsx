@@ -52,7 +52,7 @@ export default function RightMenu() {
           ></label>
           <ul
             className="menu pt-16 h-svh bg-neutral text-neutral-content 
-          shadow-sm shadow-primary w-48"
+          shadow-sm shadow-warning w-48"
           >
             <li onClick={handleItemClick2}>
               <Link
