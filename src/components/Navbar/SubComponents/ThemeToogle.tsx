@@ -5,12 +5,12 @@ export default function ThemeToogle() {
       className="swap swap-rotate p-0 m-0 btn btn-sm btn-ghost btn-circle 
       py-0 my-0 mr-8 sm:mr-12 text-xl sm:text-3xl"
     >
-      <input type="checkbox" className="theme-controller " value="dark" />
+      <input type="checkbox" className="theme-controller " value="light" />
       <div className="swap-off fill-current m-0 p-0 ">
-        <HiMoon />
+        <HiSun />
       </div>
       <div className="swap-on fill-current m-0 p-0 ">
-        <HiSun />
+        <HiMoon />
       </div>
     </label>
   );
