@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Form from './SubComponents/Form';
 import Input from './SubComponents/Input';
 import Select from './SubComponents/Select';
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 export default function ProjectForm({ btnText }: { btnText: string }) {
   const navigate = useNavigate();
@@ -11,11 +11,23 @@ export default function ProjectForm({ btnText }: { btnText: string }) {
   const OrçamentoRef = useRef<HTMLInputElement>(null);
   const SelectRef = useRef<HTMLSelectElement>(null);
   const [error, setError] = useState<boolean | null | undefined>(false);
-  const options = [
-    { id: 1, name: 'Opção 1' },
-    { id: 2, name: 'Opção 2' },
-    { id: 3, name: 'Opção 3' },
-  ];
+  const [options, setOptions] = useState<Promise<any> | any>([]);
+
+  useEffect(() => {
+    fetch('http://localhost:5000/categories', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        if (SelectRef.current) {
+          setOptions(data);
+        }
+      })
+      .catch((error) => console.log(error));
+  }, []);
 
   const handleSubmit = () => {
     if (validateForm()) {
