@@ -14,7 +14,7 @@ export default function HomePage() {
       <p className="pt-4 text-sm sm:text-xl">
         Começe a gerenciar seus projetos
       </p>
-      <LinkButton routeTo="/projects" tittleBtn="Criar Projeto" />
+      <LinkButton routeTo="/projects" tittleBtn="Gerenciar" />
       <ImgBg />
     </section>
   );
