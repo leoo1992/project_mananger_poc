@@ -1,12 +1,18 @@
 import LinkButton from '../layout/LinkButton';
-import { useNavigate } from 'react-router-dom';
 import Form from './SubComponents/Form';
 import Input from './SubComponents/Input';
 import Select from './SubComponents/Select';
 import { useRef, useState, useEffect } from 'react';
 
-export default function ProjectForm({ btnText }: { btnText: string }) {
-  const navigate = useNavigate();
+export default function ProjectForm({
+  btnText,
+  handleSubmit,
+  projectData,
+}: {
+  btnText: string;
+  handleSubmit: (project: any) => void;
+  projectData: any;
+}) {
   const NameRef = useRef<HTMLInputElement>(null);
   const OrçamentoRef = useRef<HTMLInputElement>(null);
   const SelectRef = useRef<HTMLSelectElement>(null);
@@ -26,16 +32,24 @@ export default function ProjectForm({ btnText }: { btnText: string }) {
           setOptions(data);
         }
       })
-      .catch((error) => console.log(error));
+      .catch((er) => console.log(er));
+    NameRef.current?.focus();
   }, []);
 
-  const handleSubmit = () => {
+  const submit = (e: any) => {
+    e.preventDefault();
     if (validateForm()) {
-      console.log(NameRef.current?.value);
-      console.log(OrçamentoRef.current?.value);
-      console.log(SelectRef.current?.value);
-      console.log('passou', error);
-      navigate('/');
+      const { name, cost, category } = {
+        name: NameRef.current?.value,
+        cost: OrçamentoRef.current?.value,
+        category: [
+          SelectRef.current?.value,
+          SelectRef.current?.selectedOptions[0].textContent,
+        ],
+      };
+      handleSubmit({ name, cost, category });
+      e.target.reset();
+      NameRef.current?.focus();
     }
   };
 
@@ -57,8 +71,8 @@ export default function ProjectForm({ btnText }: { btnText: string }) {
   };
 
   return (
-    <Form>
-      <div className="flex flex-col w-full max-w-xs p-4 gap-y-3.5">
+    <Form onSubmit={submit}>
+      <div className="flex flex-col w-full max-w-xs p-4 gap-y-1">
         <Input
           inputRef={NameRef}
           nameID={'name'}
@@ -82,13 +96,8 @@ export default function ProjectForm({ btnText }: { btnText: string }) {
             * Preencha todos os campos
           </span>
         ) : null}
-      </div>
-      <div className="flex flex-col w-full max-w-xs pb-4">
-        <LinkButton
-          type="submit"
-          tittleBtn={btnText}
-          OnClickEvent={handleSubmit}
-        />
+
+        <LinkButton type="submit" tittleBtn={btnText} />
       </div>
     </Form>
   );
