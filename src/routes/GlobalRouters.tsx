@@ -13,7 +13,7 @@ import {
   CreateUpdateProjectsPage,
 } from '../pages';
 import Container from '../components/layout/Container';
-import { Toaster } from 'react-hot-toast';
+import { ToastBar, Toaster } from 'react-hot-toast';
 // import PrivateRoute from './PrivateRoute';
 
 export default function GlobalRouters() {
@@ -22,7 +22,24 @@ export default function GlobalRouters() {
   return (
     <BrowserRouter>
       <Navbar />
-      <Toaster />
+      <Toaster
+        toastOptions={{
+          className: 'transition-all duration-500 ease-in-out',
+        }}
+      >
+        {(t) => (
+          <ToastBar
+            toast={t}
+            style={{
+              ...t.style,
+              animation: t.visible
+                ? 'custom-enter 1s ease'
+                : 'custom-exit 1s ease',
+            }}
+          />
+        )}
+      </Toaster>
+      ;
       <Container>
         <Routes>
           <Route path="/" element={<HomePage />} />
