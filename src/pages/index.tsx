@@ -6,6 +6,7 @@ import ContactsPage from './ContactsPage';
 import ConfigsPage from './ConfigsPage';
 import LogoutPage from './LogoutPage';
 import ProfilePage from './ProfilePage';
+import CreateUpdateProjectsPage from './CreateUpdateProjectsPage';
 
 export {
   HomePage,
@@ -16,4 +17,5 @@ export {
   ConfigsPage,
   LogoutPage,
   ProfilePage,
+  CreateUpdateProjectsPage,
 };
