@@ -41,7 +41,7 @@ export default function RightMenu() {
             </label>
           </button>
         </div>
-        <div className="drawer-side h-svh w-svw z-50">
+        <div className="drawer-side h-svh w-svw z-40">
           <label
             htmlFor="my-drawer-4"
             aria-label="close sidebar"

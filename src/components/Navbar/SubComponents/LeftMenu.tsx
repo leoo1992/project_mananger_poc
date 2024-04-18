@@ -55,7 +55,7 @@ export default function LeftMenu() {
             </label>
           </button>
         </div>
-        <div className="drawer-side h-svh w-svw z-50">
+        <div className="drawer-side h-svh w-svw z-40">
           <label
             htmlFor="my-drawer"
             aria-label="close sidebar"
