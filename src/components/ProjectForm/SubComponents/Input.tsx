@@ -29,6 +29,8 @@ export default function Input({
         name={nameID}
         type={typeInput}
         placeholder={labelName}
+        maxLength={40}
+        max={100000000}
         required={required}
         className={`input input-bordered input-warning 
         max-w-xs border-dotted ${classNameInput}`}
