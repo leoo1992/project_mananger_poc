@@ -1,8 +1,8 @@
-import { useEffect } from 'react';
+import { MutableRefObject, useEffect } from 'react';
 import readCategories from '../services/Projects/readCategories';
 
 interface FormEffectsProps {
-  SelectRef: React.MutableRefObject<HTMLSelectElement | null>;
+  SelectRef: MutableRefObject<HTMLSelectElement>;
   setOptions: (data: any) => void;
 }
 

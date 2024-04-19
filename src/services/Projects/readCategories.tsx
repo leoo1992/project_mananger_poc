@@ -1,5 +1,7 @@
+import { MutableRefObject } from 'react';
+
 export default function readCategories(
-  SelectRef: React.MutableRefObject<HTMLSelectElement | null>,
+  SelectRef: MutableRefObject<HTMLSelectElement>,
   setOptions: (data: any) => void
 ) {
   fetch('http://localhost:5000/categories', {

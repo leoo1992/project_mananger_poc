@@ -8,7 +8,7 @@ export default function Container({ children, customClass = '' }: Props) {
   return (
     <main
       className={`flex
-    items-start min-h-screen min-w-screen flex-wrap py-20 px-4 ${customClass}`}
+    items-start flex-grow min-w-screen flex-wrap py-20 px-4 ${customClass}`}
     >
       {children}
     </main>

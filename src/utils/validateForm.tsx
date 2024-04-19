@@ -1,8 +1,10 @@
+import { Dispatch, MutableRefObject } from 'react';
+
 export default function validateForm(
-  NameRef: React.MutableRefObject<HTMLInputElement | null>,
-  OrçamentoRef: React.MutableRefObject<HTMLInputElement | null>,
-  SelectRef: React.MutableRefObject<HTMLSelectElement | null>,
-  setError: React.Dispatch<React.SetStateAction<boolean | null | undefined>>
+  NameRef: MutableRefObject<HTMLInputElement | null>,
+  OrçamentoRef: MutableRefObject<HTMLInputElement | null>,
+  SelectRef: MutableRefObject<HTMLSelectElement>,
+  setError: Dispatch<React.SetStateAction<boolean | null | undefined>>
 ): boolean {
   if (
     NameRef.current?.value &&

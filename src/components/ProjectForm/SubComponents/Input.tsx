@@ -31,6 +31,7 @@ export default function Input({
         placeholder={labelName}
         maxLength={40}
         max={100000000}
+        step="0.01"
         required={required}
         className={`input input-bordered input-warning 
         max-w-xs border-dotted ${classNameInput}`}

@@ -8,4 +8,8 @@ import GlobalRouters from '../routes/GlobalRouters';
 // window.console.log = () => {};
 // window.console.clear();
 
-ReactDOM.createRoot(document.getElementById('root')!).render(<GlobalRouters />);
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <div id="root" className="bg-base-300 h-full w-full">
+    <GlobalRouters />
+  </div>
+);

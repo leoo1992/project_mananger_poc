@@ -62,8 +62,9 @@ export default function ProjectForm({
             * Preencha todos os campos
           </span>
         ) : null}
-
-        <LinkButton type="submit" tittleBtn={btnText} />
+        <span className="mt-4 flex text-center justify-center">
+          <LinkButton type="submit" tittleBtn={btnText} />
+        </span>
       </div>
     </Form>
   );

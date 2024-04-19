@@ -20,9 +20,9 @@ export default function LinkButton({
       <button
         onClick={OnClickEvent}
         className="btn btn-warning btn-sm sm:btn-md w-32 flex self-center 
-      items-center mt-4 border-0  hover:bg-yellow-400
+      items-center border-0  hover:bg-yellow-400
        hover:scale-110 transition-all duration-500 
-       ease-in-out hover:shadow-warning hover:shadow-md text-black"
+       ease-in-out shadow-sm shadow-base-content text-black"
       >
         {tittleBtn}
         {children}
@@ -34,9 +34,9 @@ export default function LinkButton({
       type={type}
       onClick={OnClickEvent}
       className="btn btn-warning btn-sm sm:btn-md w-32 flex self-center 
-      items-center mt-6 border-0  hover:bg-yellow-400
+      items-center border-0  hover:bg-yellow-400
        hover:scale-110 transition-all duration-500 
-       ease-in-out hover:shadow-warning hover:shadow-md text-black"
+       ease-in-out shadow-sm shadow-base-content text-black"
     >
       {tittleBtn}
       {children ? children : null}

@@ -9,7 +9,7 @@ export default function Navbar() {
     <header className="p-0 m-0">
       <nav
         className="navbar bg-neutral shadow-lg top-0 w-screen 
-      py-0 my-0 absolute"
+      py-0 my-0 absolute z-10"
       >
         <div className="navbar-start p-0 m-0">
           <LeftMenu />

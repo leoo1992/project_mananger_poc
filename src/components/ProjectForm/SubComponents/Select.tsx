@@ -1,4 +1,4 @@
-import { RefObject } from 'react';
+import { MutableRefObject } from 'react';
 
 type PropTypes = {
   nameID: string;
@@ -8,7 +8,7 @@ type PropTypes = {
   classNameLabel?: string;
   classNameSelect?: string;
   classNameOption?: string;
-  selectRef: RefObject<HTMLSelectElement>;
+  selectRef: MutableRefObject<HTMLSelectElement>;
   required?: boolean;
 };
 
