@@ -2,28 +2,34 @@
   "projects": [],
   "categories": [
     {
-      "id": 1,
-      "name": "Infraestrutura"
+      "id": "1",
+      "name": "Infraestrutura",
+      "color": "bg-blue-500"
     },
     {
-      "id": 2,
-      "name": "Desenvolvimento"
+      "id": "2",
+      "name": "Desenvolvimento",
+      "color": "bg-red-500"
     },
     {
-      "id": 3,
-      "name": "Design"
+      "id": "3",
+      "name": "Design",
+      "color": "bg-yellow-500"
     },
     {
-      "id": 4,
-      "name": "Marketing"
+      "id": "4",
+      "name": "Marketing",
+      "color": "bg-green-500"
     },
     {
-      "id": 5,
-      "name": "Planejamento"
+      "id": "5",
+      "name": "Planejamento",
+      "color": "bg-purple-500"
     },
     {
-      "id": 6,
-      "name": "Outros"
+      "id": "6",
+      "name": "Outros",
+      "color": "bg-pink-500"
     }
   ]
 }

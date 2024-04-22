@@ -4,26 +4,27 @@ type Category = {
   color: string;
 };
 
-export default function getColorByID(id: string): Promise<string> {
+export default function getColorByID(id: number): Promise<string> {
+  if (isNaN(id)) {
+    return Promise.resolve('');
+  }
+
   return fetch('http://localhost:5000/categories')
-    .then((resp) => resp.json())
-    .then((data) => {
-      const categories: Category[] = data;
-      if (categories && categories.length > 0) {
-        const category = categories.find((cat) => cat.id === id.toString());
-        if (category) {
-          return category.color;
-        } else {
-          console.log('Categoria não encontrada');
-          return 'bg-white';
-        }
+    .then((resp) => {
+      if (!resp.ok) {
+        throw new Error('Failed to fetch categories');
+      }
+      return resp.json();
+    })
+    .then((categories: Category[]) => {
+      const category = categories.find((cat) => cat.id === String(id));
+      if (category) {
+        return category.color;
       } else {
-        console.log('Nenhuma categoria disponível');
-        return 'bg-white';
+        return '';
       }
     })
     .catch((err) => {
-      console.error(err);
-      return 'bg-white';
+      return '';
     });
 }
