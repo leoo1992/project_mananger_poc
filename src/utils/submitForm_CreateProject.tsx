@@ -12,7 +12,7 @@ export const submitForm_CreateProject = (
 ) => {
   e.preventDefault();
   if (validateForm(NameRef, OrçamentoRef, SelectRef, setError)) {
-    getColorByID(SelectRef?.current?.value)
+    getColorByID(parseInt(SelectRef?.current?.value))
       .then((color) => {
         const { name, cost, category } = {
           name: NameRef.current?.value,
