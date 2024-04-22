@@ -15,11 +15,9 @@ export default function createProject(
     .then((resp) => resp.json())
     .then((data) => {
       notifySuccess({ text: 'Projeto criado com sucesso!' });
-      console.log(data);
       navigate('/projects');
     })
-    .catch((error) => {
+    .catch(() => {
       notifyError({ text: 'Erro ao criar projeto' });
-      console.log(error);
     });
 }
